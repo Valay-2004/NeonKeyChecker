@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Power Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔐 Password Power Checker 🔐</h1>
+
+        <!-- 🌞 Circular Light/Dark Mode Switch -->
+        <div class="theme-switch">
+            <input type="checkbox" id="themeToggle" />
+            <label for="themeToggle" class="theme-label">
+                <span class="circle"><span class="icon">🌙</span></span>
+            </label>
+        </div>
+
+        <!-- Hashing Algorithm Selector -->
+        <div class="hash-selector">
+            <label for="hashMethod">🔍 Select Hashing Algorithm:</label>
+            <select id="hashMethod">
+                <option value="bcrypt">bcrypt (Secure & Slow)</option>
+                <option value="sha256">SHA-256 (Moderate Security)</option>
+                <option value="md5">MD5 (Fast & Weak)</option>
+            </select>
+        </div>
+
+        <!-- Password Input -->
+        <input type="password" id="password" placeholder="Enter your password...">
+
+        <!-- Toggle Visibility & Generator -->
+        <button id="togglePassword">🙈 Show Password</button>
+        <button id="generatePassword">🎲 Generate Secure Password</button>
+
+        <!-- Password Strength Meter -->
+        <div class="strength-meter-container">
+            <div id="strengthMeter" class="strength-meter"></div>
+        </div>
+
+        <!-- Password Analysis -->
+        <div id="result" class="result" aria-live="polite">🔎 Enter a password to analyze.</div>
+        <!-- <div id="badge" class="badge">🔍 No Password</div> -->
+        <div id="criteria" class="criteria"></div>
+        <div id="suggestions" class="suggestions"></div>
+
+        <!-- Password Tips -->
+        <p class="crack-time-note">
+            🕵️ Crack time is estimated based on selected hashing algorithms.
+        </p>
+        <div class="tips">
+            💡 Use unique passwords and consider a password manager for better security. <br>
+            Refer to <a href="https://www.security.org/how-secure-is-my-password/" target="_blank" style="color: rgb(0, 131, 246);">Security.org</a> for more info.
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

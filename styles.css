@@ -1,0 +1,232 @@
+/* 🌞 Theme Variables */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --bg-color: rgba(30, 30, 30, 0.6);
+    --text-color: white;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --button-bg: linear-gradient(145deg, #6a11cb, #2575fc);
+    --headline-glow: 0 0 10px #00ffe1, 0 0 20px #00c9a5;
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 🌙 Light Mode */
+[data-theme="light"] {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    --bg-color: rgba(255, 255, 255, 0.5);
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-bg: linear-gradient(145deg, #ff8c00, #ffa500);
+    --headline-glow: 0 0 8px #ff8c00, 0 0 15px #ffa500;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 🌐 Animated Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-gradient);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Background Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 📦 Glassmorphism Container */
+.container {
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 40px var(--shadow-color);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* 🔥 Headline */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-shadow: var(--headline-glow);
+    transition: color 0.5s, text-shadow 0.5s;
+}
+
+/* 📊 Strength Meter */
+.strength-meter-container {
+    width: 100%;
+    background: #333;
+    height: 8px;
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* 🔘 Input & Buttons */
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    margin: 10px 0;
+    background: #444;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 225, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: var(--button-bg);
+    color: white;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* 🌙 Circular Theme Toggle */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+/* 🟠 Theme Toggle Label */
+.theme-label {
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: var(--button-bg);
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.4s ease;
+    touch-action: manipulation;
+}
+
+/* ⚪ Sliding Dot */
+.circle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 27px;
+    height: 27px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+    transition: transform 0.4s ease;
+}
+
+/* 🌞 Icon for Toggle */
+.circle .icon {
+    font-size: 18px;
+    transition: opacity 0.4s ease;
+}
+
+/* Move Dot to Right for Light Mode */
+[data-theme="light"] .circle {
+    transform: translateX(33px);
+}
+
+/* Light Mode: Icon Update */
+[data-theme="light"] .circle .icon {
+    opacity: 1;
+}
+
+/* ✨ Hover Effect for Toggle */
+.theme-label:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 225, 0.7);
+}
+
+/* 🔍 Hashing Algorithm Selector */
+.hash-selector {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hash-selector label {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.hash-selector select {
+    padding: 8px;
+    border-radius: 10px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 225, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+[data-theme="light"] .hash-selector select {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.hash-selector select:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 225, 0.8);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .strength-meter-container {
+        height: 6px;
+    }
+}
