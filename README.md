@@ -27,7 +27,6 @@
 |--------------|--------------|
 | ![Light Mode](assets/Light-mode.png) | ![Dark Mode](assets/Dark-mode.png) |
 
-<sub>Add screenshots to the `/assets` folder and rename accordingly.</sub>
 
 ---
 
