@@ -54,7 +54,6 @@ The estimated crack time is calculated using:
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
 - **Libraries:** 
   - [zxcvbn.js](https://github.com/dropbox/zxcvbn)
-  - [jsPDF](https://github.com/parallax/jsPDF)
 
 ---
 
