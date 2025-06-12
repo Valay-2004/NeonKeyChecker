@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hashMethod = document.getElementById("hashMethod");
     const resultDiv = document.getElementById("result");
     const circleIcon = document.querySelector(".circle .icon");
+    const strengthMeter = document.getElementById("strengthMeter");
 
     // 🌟 Ensure the correct theme is applied on page load
     const savedTheme = localStorage.getItem("theme") || "dark";
@@ -84,6 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update crack time immediately
         const crackTime = estimateCrackTime(password);
         resultDiv.textContent = `🧮 Estimated Crack Time (${hashMethod.value.toUpperCase()}): ${crackTime}`;
+        
+        // Trigger input event to update strength meter and any other listeners
+        passwordInput.dispatchEvent(new Event('input'));
     });
 
     // 🙈 Toggle Password Visibility
@@ -91,4 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordInput.type = passwordInput.type === "password" ? "text" : "password";
         togglePassword.textContent = passwordInput.type === "password" ? "🙈 Show Password" : "🙉 Hide Password";
     });
+
+    // Password Strength Meter
+    passwordInput.addEventListener("input", function () {
+        const val = passwordInput.value;
+        if (!val) {
+            strengthMeter.style.width = '0%';
+            strengthMeter.style.background = '#ccc';
+            return;
+        }
+        const result = zxcvbn(val);
+        // result.score is 0 (weakest) to 4 (strongest)
+        const colors = ['#ff4d4d', '#ffb84d', '#ffe44d', '#a6ff4d', '#4dff88'];
+        strengthMeter.style.width = ((result.score + 1) * 20) + '%';
+        strengthMeter.style.background = colors[result.score];
+    });
 });
+

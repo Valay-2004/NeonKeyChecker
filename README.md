@@ -4,7 +4,15 @@
 **NeonKeyChecker** is a modern, browser-based tool that helps users evaluate password strength using realistic crack-time simulations across different hashing algorithms. It features real-time feedback, dynamic UI, and tools that emphasize secure password practices in a fun yet educational way.
 
 ---
-## How It Works!
+
+## 🧪 How It Works
+
+1. Enter a password and get dynamic feedback.
+2. Select a hashing algorithm to simulate real-world cracking speeds.
+3. Generate strong random passwords on demand.
+4. Toggle between light/dark themes.
+<!-- 5. Export analysis as a PDF. -->
+
 ### 🔍 Attack Model Assumption
 **NeonKeyChecker** estimates password crack time by simulating a pure brute-force offline attack, assuming the attacker has access to the password hash (not the plaintext) and no prior context about the user.
 
@@ -59,16 +67,6 @@ open index.html
 ```
 
 <sub>Or just open the `index.html` file in your browser directly.</sub>
-
----
-
-## 🧪 How It Works
-
-1. Enter a password and get dynamic feedback.
-2. Select a hashing algorithm to simulate real-world cracking speeds.
-3. Generate strong random passwords on demand.
-4. Toggle between light/dark themes.
-<!-- 5. Export analysis as a PDF. -->
 
 ---
 
