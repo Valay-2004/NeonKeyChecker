@@ -20,7 +20,7 @@ The estimated crack time is calculated using:
 - Password length & character variety (entropy)
 - Hashing algorithm speed (e.g., bcrypt vs MD5)
 
-<b>❌ This does not simulate <i>dictionary, rainbow table, or social engineering attacks</i> — it's purely to visualize strength against raw computational brute-force attempts.</b>
+<b>❌ This does not simulate <i>dictionary, rainbow table, or social engineering attacks</i> | It's purely to visualize strength against raw computational brute-force attempts.</b>
 
 ---
 
